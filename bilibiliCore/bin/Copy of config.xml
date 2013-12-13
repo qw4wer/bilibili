@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<apis>
+		<view>http://api.bilibili.tv/view?type=&amp;appkey=&amp;id=&amp;page=</view>
+		<down>http://interface.bilibili.tv/playurl?otype=&amp;cid=</down>
+	</apis>
+	<nets>
+		<look>https://secure.bilibili.tv/secure,cid=</look>
+	</nets>
+</config>

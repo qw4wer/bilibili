@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="profiler.settings.n.profiled.threads.limit">32</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="profiler.settings.obj.alloc.stack.sampling.depth">-1</entry>
+<entry key="profiler.settings.instrument.method.invoke">true</entry>
+<entry key="profiler.settings.instr.scheme">1</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">com.diablominer.DiabloMiner.**
+com.qw4wer.bilibili.config.**
+com.qw4wer.bilibili.entity.**
+com.qw4wer.bilibili.server.**
+com.qw4wer.bilibili.test.**
+com.qw4wer.bilibili.until.**
+org.jui.core.dynamic.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">com.diablominer.DiabloMiner.*,&#13;
+com.qw4wer.bilibili.config.*,&#13;
+com.qw4wer.bilibili.entity.*,&#13;
+com.qw4wer.bilibili.server.*,&#13;
+com.qw4wer.bilibili.test.*,&#13;
+com.qw4wer.bilibili.until.*,&#13;
+org.jui.core.dynamic.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+<entry key="profiler.settings.sampling.interval">10</entry>
+<entry key="profiler.settings.cpu.profiling.type">0</entry>
+</properties>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+	<apis>
+		<view>
+			<url>http://api.bilibili.tv/view?type=&amp;appkey=&amp;id=&amp;page=
+			</url>
+			<return>
+				<r name="play" type="Integer" /> <!-- 播放数 -->
+				<r name="review" type="int" />	<!-- 弹幕数 -->
+				<r name="video_review" type=" int" /> <!-- 弹幕数 -->
+				<r name="favorites" type=" int" /><!-- 收藏数 -->
+				<r name="credit" type=" int" /><!-- 评分数量 -->
+				<r name="coins" type=" int" /><!-- 硬币数 -->
+				<r name="title" type=" String" /><!-- 标题 -->
+				<r name="description" type=" String" /><!-- 简介 -->
+				<r name="tag" type=" String" /><!-- 关键字 -->
+				<r name="pic" type=" String" /><!-- 封面图片URL地址 -->
+				<r name="pages" type=" String" /><!-- 返回记录的总页数 -->
+				<r name="from" type=" String" /><!-- 视频来源 -->
+				<r name="author" type=" String" /><!--  投搞人 -->
+				<r name="mid" type=" int" /><!--  投搞人ID -->
+				<r name="cid" type=" int" /><!--  视频源及弹幕编号 弹幕地址 http://comment.bilibili.tv/<cid>.xml -->
+				<r name="offsite" type=" String" /><!--  Flash播放调用地址 -->
+				<r name="create_at" type=" String" /><!--  视频发布日期 -->
+				<r name="favorited" type=" boolean" /><!--  当前帐号收藏状态 -->
+			</return>
+		</view>
+		<!-- 
+		<down>
+			<url>http://interface.bilibili.tv/playurl?otype=&amp;cid=</url>
+			<return>
+				<r name="play" type="int" />
+			</return>
+		</down>
+		 -->
+	</apis>
+	<nets>
+		<look>https://secure.bilibili.tv/secure,cid=</look>
+	</nets>
+</config>
