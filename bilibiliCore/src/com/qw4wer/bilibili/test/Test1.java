@@ -6,12 +6,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
+//import java.util.Arrays;
+import java.util.ListIterator;
+import java.util.Set;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
 import org.junit.Test;
 
+import com.qw4wer.bilibili.common.UrlUtils;
 import com.qw4wer.bilibili.entity.View;
 import com.qw4wer.bilibili.until.BilibiliApi;
 
@@ -31,6 +37,7 @@ public class Test1 {
 			InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
 			BufferedReader reader = new BufferedReader(inputStreamReader);
 			String json = reader.readLine();
+			System.out.println(json);
 			JSONObject jsonObject = JSONObject.fromObject(json);
 			reader.close();
 			inputStream.close();
@@ -45,17 +52,28 @@ public class Test1 {
 	@SuppressWarnings("static-access")
 	@Test
 	public void test1() throws JSONException{
-		JSONObject stc  = toByteArrayOutputStream(BilibiliApi.getMovieInfoPath("json", "8e9fc618fbd41e28", 777576, 1));
+		JSONObject stc  = toByteArrayOutputStream(UrlUtils.getViewUrl("json", "8e9fc618fbd41e28", 154545, 1));
 		System.out.println(stc);
-		System.out.println(stc.get("offsite"));
-		String offsite = stc.get("offsite").toString();
-		offsite = (offsite.substring(offsite.indexOf("=")+1,offsite.indexOf("&")));
-		System.out.println(offsite);
 		View v = (View) JSONObject.toBean(stc, View.class);
+		
 		System.out.println(v.getOffsite());
 		
 		System.out.println("aid"+v.getAid());
 		
 		System.out.println(BilibiliApi.getPlayUrl(v.getCid(), v.getAid()));
+		
+		System.out.println( BilibiliApi.getMovieDownloadPath("json", v.getCid(), "mp4"));
+		
+		JSONObject s  = toByteArrayOutputStream(BilibiliApi.getMovieDownloadPath("json", v.getCid(), "mp4"));
+		
+		System.out.println(s);
+		for(Object o : s.keySet()){
+//			System.out.println(s.get(o));
+			if(s.get(o) instanceof JSONArray){
+				System.out.println(s.get(o).toString());
+//				JSONObject jsonObject = JSONObject.fromObject(s.get(o).toString());
+//				System.out.println(jsonObject.size());
+			}
+		}
 	}
 }

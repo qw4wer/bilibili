@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="miner/lib/lwjgl-platform-2.8.5-natives-linux.jar"/>
 	<classpathentry kind="lib" path="miner/lib/lwjgl-platform-2.8.5-natives-osx.jar"/>
 	<classpathentry kind="lib" path="miner/lib/lwjgl-platform-2.8.5-natives-windows.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-3.0.4.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.util.ObjectUtils;
 
 import com.qw4wer.bilibili.entity.View;
 
@@ -18,20 +19,27 @@ public class TestClass {
 		View view1 = new View();
 		view1.setCid(10);
 		View view2 = new View();
-		view1.setCid(100);
+		view2.setCid(100);
 		Map<String,Object> last = getMap(view1);
 		Map<String,Object> now = getMap(view2);
 		
 		Map<String,String> change = new HashMap<String, String>(); 
 		Field[] fields = view1.getClass().getDeclaredFields();
 		for (Field f : fields) {
-			if((last.get(f.getName())).equals(now.get(f.getName()))){
+//			if(last.get(f.getName())==null||now.get(f.getName())==null)
+//				continue;
+//			if(!(last.get(f.getName())).equals(now.get(f.getName()))){
+//				change.put(f.getName(), last.get(f.getName())+"->"+now.get(f.getName()));
+//			}
+			if(!ObjectUtils.nullSafeEquals(last.get(f.getName()), now.get(f.getName()))){
 				change.put(f.getName(), last.get(f.getName())+"->"+now.get(f.getName()));
 			}
 			
 		}
 		
-		System.out.println(change.isEmpty());
+		for (String s : change.keySet()) {
+			System.out.printf("change : field:\t%s\tvalue:\t%s\n",s,change.get(s));
+		}
 	}
 	
 	public static Map<String,Object> getMap(Object obj) throws Exception{

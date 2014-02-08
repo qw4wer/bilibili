@@ -65,12 +65,15 @@ public class ReaderConfig extends ReaderXMLBasic {
 
 	public static void main(String[] args) {
 		 new ReaderConfig();
-		 Set<Entry<String, Map<String,String>>> s= fileds.entrySet();
-		for (Entry<String, Map<String, String>> entry : s) {
-			System.out.println(entry.getKey());
-			for (Entry<String,String> e: entry.getValue().entrySet()) {
-				System.out.println(e.getKey()+"\t"+e.getValue());
-			}
+//		 Set<Entry<String, Map<String,String>>> s= fileds.entrySet();
+//		for (Entry<String, Map<String, String>> entry : s) {
+//			System.out.println(entry.getKey());
+//			for (Entry<String,String> e: entry.getValue().entrySet()) {
+//				System.out.println(e.getKey()+"\t"+e.getValue());
+//			}
+//		}
+		 for (String string : config.keySet()) {
+			System.out.println(config.get(string));
 		}
 	}
 }

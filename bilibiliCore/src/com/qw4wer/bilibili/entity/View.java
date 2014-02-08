@@ -1,5 +1,7 @@
 package com.qw4wer.bilibili.entity;
 
+import com.qw4wer.bilibili.common.AnalysisUrl;
+
 public class View {
 	private  String offsite;
 	private  String tag;
@@ -20,8 +22,7 @@ public class View {
 	private  int credit;
 	private int review;
 	
-	private int aid;
-
+	private Object spid;
 	public void setOffsite( String offsite) {
 		this.offsite = offsite;
 	}
@@ -167,11 +168,18 @@ public class View {
 	}
 
 	public int getAid() {
-		return Integer.valueOf(offsite.substring(offsite.indexOf("=")+1, offsite.indexOf("&")));
+		if(offsite==null || offsite.isEmpty())
+			return -1;
+		return Integer.valueOf(AnalysisUrl.URLRequest(offsite).get("aid"));
 	}
 
-	public void setAid(int aid) {
-		this.aid = aid;
+
+	public Object getSpid() {
+		return spid;
+	}
+
+	public void setSpid(Object spid) {
+		this.spid = spid;
 	}
 
 }

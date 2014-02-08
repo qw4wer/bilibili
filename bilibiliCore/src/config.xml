@@ -3,7 +3,7 @@
 <config>
 	<apis>
 		<view>
-			<url>http://api.bilibili.tv/view?type=&amp;appkey=&amp;id=&amp;page=
+			<url>http://api.bilibili.tv/view?type=%type&amp;appkey=%appkey&amp;id=%id&amp;page=%page
 			</url>
 			<return>
 				<r name="play" type="Integer" /> <!-- 播放数 -->
@@ -36,6 +36,6 @@
 		 -->
 	</apis>
 	<nets>
-		<look>https://secure.bilibili.tv/secure,cid=</look>
+		<look>https://secure.bilibili.tv/secure,cid=%cid</look>
 	</nets>
 </config>
